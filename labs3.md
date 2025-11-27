@@ -59,6 +59,17 @@ spec:
         resources:
           requests:
             cpu: "100m"  # Requête CPU pour déclencher HPA
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: hpa-demo
+spec:
+  selector:
+    app: hpa-demo
+  ports:
+  - port: 80
+    targetPort: 80
 ```
 
 **Appliquer** :
