@@ -79,7 +79,7 @@ kubectl apply -f hpa-deployment.yaml
 
 ### 1.2 Configurer HPA
 ```bash
-kubectl autoscale deployment hpa-demo --cpu-percent=50 --min=1 --max=5
+kubectl autoscale deployment hpa-demo --cpu=50% --min=1 --max=5
 ```
 **Explications** :
 - `--cpu-percent=50` : HPA déclenche si l'utilisation CPU dépasse 50%.
