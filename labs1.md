@@ -1,9 +1,8 @@
 
 ---
 
-### **1. `01-prepare-environment.sh`**
+### **1. `01-prepare-environment`**
 ```bash
-#!/bin/bash
 # --------------------------------------------------------------------
 # Script : 01-prepare-environment.sh
 # Description : Crée le groupe de ressources Azure pour le lab AKS.
@@ -38,9 +37,8 @@ echo "✅ Groupe de ressources '$RESOURCE_GROUP' créé avec succès."
 
 ---
 
-### **2. `02-create-aks-cluster.sh`**
+### **2. `02-create-aks-cluster`**
 ```bash
-#!/bin/bash
 # --------------------------------------------------------------------
 # Script : 02-create-aks-cluster.sh
 # Description : Crée un cluster AKS avec les paramètres spécifiés.
@@ -86,16 +84,14 @@ if [ $? -ne 0 ]; then
 fi
 
 echo "✅ Cluster AKS '$CLUSTER_NAME' en cours de création (5-10 min)."
-echo "   Exécutez './03-connect-and-verify.sh' une fois la création terminée."
 ```
 
 ---
 
-### **3. `03-connect-and-verify.sh`**
-```bash
-#!/bin/bash
+### **3. `03-connect-and-verify`**
+```bash#!/bin/bash
 # --------------------------------------------------------------------
-# Script : 03-connect-and-verify.sh
+# Script : 03-connect-and-verify
 # Description : Configure kubectl pour accéder au cluster et vérifie l'état des nœuds.
 # Prérequis : Le cluster AKS doit être créé (voir 02-create-aks-cluster.sh).
 # --------------------------------------------------------------------
@@ -130,9 +126,8 @@ echo "✅ Les nœuds sont prêts. Exécutez './04-deploy-test-app.sh' pour dépl
 
 ---
 
-### **4. `04-deploy-test-app.sh`**
+### **4. `04-deploy-test-app`**
 ```bash
-#!/bin/bash
 # --------------------------------------------------------------------
 # Script : 04-deploy-test-app.sh
 # Description : Déploie une application Nginx et l'expose via un LoadBalancer.
@@ -169,9 +164,8 @@ kubectl get service nginx-deployment --watch
 
 ---
 
-### **5. `05-cleanup.sh`**
+### **5. `05-cleanup`**
 ```bash
-#!/bin/bash
 # --------------------------------------------------------------------
 # Script : 05-cleanup.sh
 # Description : Supprime le groupe de ressources et toutes les ressources AKS associées.
@@ -213,23 +207,7 @@ echo "✅ Nettoyage terminé. Toutes les ressources du groupe '$RESOURCE_GROUP' 
 - **`az group delete --no-wait`** :
   Lance la suppression en arrière-plan, ce qui permet de gagner du temps (la suppression peut prendre plusieurs minutes).
 
----
 
-### **Comment Utiliser Ces Scripts ?**
-1. **Rendez les scripts exécutables** :
-   ```bash
-   chmod +x 0*.sh
-   ```
-2. **Exécutez-les dans l'ordre** :
-   ```bash
-   ./01-prepare-environment.sh
-   ./02-create-aks-cluster.sh
-   ./03-connect-and-verify.sh
-   ./04-deploy-test-app.sh
-   ```
-3. **Nettoyez après utilisation** :
-   ```bash
-   ./05-cleanup.sh
-   ```
+
 
 ---
