@@ -54,10 +54,6 @@ Connectez-vous au portail Azure en utilisant les identifiants fournis sur la pag
 ---
 
 #### Construire et pousser une image de conteneur vers l’ACR
-1. Accédez au répertoire **clouddrive** :
-   ```bash
-   cd clouddrive
-   ```
 2. Créez un fichier **Dockerfile** :
    ```bash
    echo FROM mcr.microsoft.com/hello-world > Dockerfile
