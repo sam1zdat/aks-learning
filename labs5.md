@@ -27,10 +27,10 @@ helm version  # Optionnel
 
 ### 1.1. Configuration initiale
 ```bash
-RESOURCE_GROUP="aks-monitoring-rg"
-AKS_NAME="aks-monitoring-cluster"
+RESOURCE_GROUP="aks-monitoring-rg-<votre prénom>"
+AKS_NAME="aks-monitoring-cluster-<votre prénom>"
 LOCATION="francecentral"
-LOG_ANALYTICS_WORKSPACE_NAME="aks-monitoring-logs"
+LOG_ANALYTICS_WORKSPACE_NAME="aks-monitoring-logs-<votre prénom>"
 ```
 
 ### 1.2. Création du Resource Group
